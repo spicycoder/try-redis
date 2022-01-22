@@ -1,0 +1,10 @@
+name: superheroes
+services:
+  - name: bookofheroes
+    project: BookOfHeroes/BookOfHeroes.csproj
+  - name: redisdb
+    image: redislabs/rejson
+    bindings:
+      - port: 6500
+        containerPort: 6379
+        connectionString: "redis://${host}:${port}"
